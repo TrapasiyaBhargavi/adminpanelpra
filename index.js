@@ -10,13 +10,23 @@ const app=express();
 const mongoose=require('mongoose');
 
 
-mongoose.connect("mongodb+srv://viradiya028:WxBWZ7JrHvo3Om08@cluster0.daqgr.mongodb.net/adminpanelsetup", {
+// mongoose.connect("mongodb+srv://viradiya028:WxBWZ7JrHvo3Om08@cluster0.daqgr.mongodb.net/adminpanelsetup", {
+//     useNewUrlParser:true,
+//     useUnifiedTopology:true
+// })
+// .then((res) => console.log("DB is connected"))
+// .catch((err) => console.log(err));
+
+
+mongoose.connect("mongodb+srv://bhargavitrapasiya12:OTUnLTQlfQAxcUJ2@cluster0.djlmy.mongodb.net/adminpanelsetup",{
     useNewUrlParser:true,
     useUnifiedTopology:true
+}).then((res)=>{
+    console.log("db is connected");
 })
-.then((res) => console.log("DB is connected"))
-.catch((err) => console.log(err));
-
+.catch((err)=>{
+    console.log("db is not connected")
+})
 const cookieparser=require('cookie-parser');
 
 const flash=require('connect-flash');
